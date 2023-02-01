@@ -1,4 +1,4 @@
-# Fullstack Boilerplate (Angular/NestJS)
+# Fullstack Boilerplate
 
 A backbone for your coding challenge.
 
