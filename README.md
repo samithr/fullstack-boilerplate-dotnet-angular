@@ -4,7 +4,7 @@ A backbone for your coding challenge.
 
 ## Contents
 
-- [Backend service](app-backend) - a NestJS service with a `/ping` endpoint. Extend with your code.
+- [Backend service](app-backend) - a .NET service with a `/ping` endpoint. Extend with your code.
 - [Frontend app](app-frontend) - an Angular app. Extend with your code.
 - [E2E test suites](cypress/integration) - a backend and a frontend Cypress test suites. Extend with your tests.
 - [Pipeline](.github/workflows/tests.yml) - a test Runner that executes the Cypress tests on push to a branch other than `master`/`main`.
@@ -13,21 +13,12 @@ A backbone for your coding challenge.
 
 ### Backend
 
-- NestJS 9.1.7
-- Typescript 4.2.3
-
-#### Additional libs
-
-- Jest (testing)
+- .NET5
 
 ### Frontend
 
 - Angular 15.0.4
 - Typescript 4.2.3
-
-#### Additional libs
-
-- Karma (testing)
 
 ### Misc
 
