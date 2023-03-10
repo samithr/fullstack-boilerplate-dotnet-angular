@@ -13,7 +13,7 @@ A backbone for your coding challenge.
 
 ### Backend
 
-- .NET5
+- .NET7
 
 ### Frontend
 
