@@ -1,4 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
+using backend.Services;
+using backend.Models;
 
 namespace backend.Controllers
 {
@@ -16,14 +18,20 @@ namespace backend.Controllers
         public async Task<List<TransactionModel>> Get()
         {
             var response = await transactionService.AllTransactions();
-            return Ok(response);
+            if(response != null){
+                return Ok(response);
+            }
+            return BadRequest(response);
         }
 
         [HttpPost]
         public async Task<TransactionModel> Post([FromBody]TransactionModel transactionModel)
         {
             var response = await transactionService.CreteTransaction(transactionModel);
-            return Ok(response);
+             if(response != null){
+                return Ok(response);
+            }
+            return BadRequest(response);
         }
     }
 }
