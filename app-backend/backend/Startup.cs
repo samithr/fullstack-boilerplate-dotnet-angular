@@ -8,7 +8,7 @@ namespace backend
     public class Startup
     {
         public IServiceCollection Configuration;
-        readonly string allowedOrogins = "allowedOrigins";
+        readonly string allowedOrigins = "allowedOrigins";
 
 
         public Startup(IConfiguration configuration)
@@ -37,6 +37,10 @@ namespace backend
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
+            app.UseMiddleware(typeof(ErrorHandlingMiddleware));
+
+            app.UseCors(MyAllowSpecificOrigins);
+            
             app.UseRouting();
             app.UseEndpoints(endpoints => { endpoints.MapControllers(); });
         }
