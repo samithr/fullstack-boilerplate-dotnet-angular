@@ -19,4 +19,16 @@ export class TransactionService {
     return this.httpClient.post(this.apiUrl, this.formData)
   }
 
+  getAllTransactions(){
+    return this.httpClient.get(this.apiUrl)
+        .subscribe({
+          next: response => {
+            this.transactionsList = response as Transaction[]
+          },
+          error: err => {
+            console.log(err);            
+          }
+        });
+  }
+
 }
