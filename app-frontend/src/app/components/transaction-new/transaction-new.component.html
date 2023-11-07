@@ -1,0 +1,21 @@
+<form #form="ngForm" (submit)="onSubmit(form)" [class.submitted]="formSubmitted" novalidate autocomplete="off">
+    <h3>Submit New Transaction</h3>
+    mb-3<div class="mb-3">
+      <label>Account Id</label>
+      <input class="form-control form-control-lg" placeholder="Account Id" name="accountId"
+        [(ngModel)]="formData.accountId" required>
+    </div>
+    <div class="mb-3">
+      <label>Amount</label>
+      <input class="form-control form-control-lg" placeholder="Amount"
+        name="amount" [(ngModel)]="formData.amount" required minlength="1" maxlength="9">
+    </div>
+    <div class="card flex justify-content-center">
+      <p-dropdown [options]="transactionTypes" [(ngModel)]="formData.transctionType" optionLabel="Type"></p-dropdown>
+  </div>
+    <div class="d-grid">
+        <button class="btn btn-lg btn-success" type="submit">
+          Submit
+        </button>
+      </div>
+</form>
